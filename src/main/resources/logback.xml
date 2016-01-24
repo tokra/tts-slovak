@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<target>System.out</target>
+		<encoder>
+			<pattern>
+				%d{ISO8601} [%thread] %-5level %logger{36}#%M\(\) - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
+		<target>System.err</target>
+		<encoder>
+			<pattern>
+				%d{ISO8601} [%thread] %-5level %logger{36}#%M\(\) - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>slf4j-logback.log</file>
+		<append>true</append>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>logback.%i.log.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>10</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>10MB</maxFileSize>
+		</triggeringPolicy>
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder
+			by default -->
+		<encoder>
+			<pattern>
+				<!-- %-4relative [%thread] %-5level %logger{35} - %msg%n -->
+				%d{ISO8601} [%thread] %-5level %logger{36}#%M\(\) - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<!--
+	<appender name="MysqlLocalhost" class="ch.qos.logback.classic.db.DBAppender">
+		<connectionSource
+			class="ch.qos.logback.core.db.DriverManagerConnectionSource">
+			<driverClass>com.mysql.jdbc.Driver</driverClass>
+			<url>jdbc:mysql://127.0.0.1:3306/logdb</url>
+			<user>root</user>
+			 <password>password</password> 
+		</connectionSource>
+	</appender>
+	-->
+	
+	<logger name="sk.tokra" level="ALL">
+		<appender-ref ref="FILE" />
+	</logger>
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
