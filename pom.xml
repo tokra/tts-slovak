@@ -19,14 +19,17 @@
 
 	<developers>
 		<developer>
+			<id>tokra</id>
 			<name>Tomas Kramaric</name>
 			<email>tomas.kramaric@gmail.com</email>
+			<timezone>UTC+1</timezone>
 		</developer>
 	</developers>
 
 	<scm>
-		<url>https://github.com/to-kra/tts-slovak</url>
+		<connection>scm:git:https://github.com/to-kra/tts-slovak.git</connection>
 		<developerConnection>https://github.com/to-kra/</developerConnection>
+		<url>https://github.com/to-kra/tts-slovak</url>
 	</scm>
 
 	<distributionManagement>
