@@ -4,10 +4,11 @@
 
 	<groupId>io.tokra</groupId>
 	<artifactId>tts-slovak</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 
 	<name>tts-slovak</name>
 	<description>Slovak Text-to-Speech Synthesis</description>
+	<url>https://github.com/to-kra/tts-slovak</url>
 
 	<licenses>
 		<license>
