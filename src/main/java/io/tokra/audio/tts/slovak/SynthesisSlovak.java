@@ -35,7 +35,7 @@ public final class SynthesisSlovak extends Synthesis {
 			logger.warn("Initialisation failed !");
 			return;
 		}
-		InputStream is = synthesis.tts("Dobrý deň");
+		InputStream is = synthesis.tts("Dobrý deň, moje meno je Tomáš");
 		if (is == null) { 
 			logger.warn("Cannot play WAV because IS is null !");
 			return;
