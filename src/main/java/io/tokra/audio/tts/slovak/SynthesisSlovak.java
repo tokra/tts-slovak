@@ -27,7 +27,7 @@ public final class SynthesisSlovak extends Synthesis {
 	/**
 	 * @author Tomas Kramaric
 	 * @since 1.0
-	 * @param args
+	 * @param args command line arguments
 	 */
 	public static void main(String[] args) { // FIXME Implement using apache's CommandLineParser
 		SynthesisSlovak synthesis = new SynthesisSlovak();

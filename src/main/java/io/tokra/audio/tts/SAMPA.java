@@ -1310,8 +1310,8 @@ public class SAMPA {
 		/**
 		 * was used in mobile j2me
 		 * 
-		 * @param sampa
-		 * @return
+		 * @param sampa samped text
+		 * @return characters from sampa string
 		 */
 		public String getCharFromSampa(String sampa) {
 			String c = "_";

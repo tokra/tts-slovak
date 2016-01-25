@@ -48,8 +48,6 @@ public abstract class Synthesis {
 	 * Initializer
 	 * 
 	 * @author Tomas Kramaric
-	 * @lastModified 12.5.2014
-	 * @throws URISyntaxException
 	 */
 	protected void init() {
 		try {
@@ -100,8 +98,7 @@ public abstract class Synthesis {
 	
 	/**
 	 * @author Tomas Kramaric
-	 * @lastModified ToKra, 12.5.2014, changed name
-	 * @param text
+	 * @param text input text to be synthesized
 	 * @return {@link InputStream} wav representation
 	 */
 	public InputStream tts(String text) {
@@ -115,12 +112,10 @@ public abstract class Synthesis {
 
 	/**
 	 * Refactored from 'convertTextToVoiceSamples()'
-	 * 
-	 * @author Tomas Kramaric
-	 * @lastModified Feb 25, 2015
-	 * @param dbSamples
-	 * @param sampedText
-	 * @return synth samples
+	 * @param sampedText input text in form of sampa
+	 * @param audiodbSamples database of audio samples
+	 * @param audiodbIndexes database of audio samples indexes
+	 * @return voice samples in form of {@link List} of short's
 	 */
 	protected List<Short> getSamplesFromSampedText(Vector<String> sampedText, short[] audiodbSamples, Map<String, Vector<Integer>> audiodbIndexes) {
 		List<Short> synthSamples = new ArrayList<Short>();
@@ -152,11 +147,9 @@ public abstract class Synthesis {
 	}
 
 	/**
-	 * @author Tomas Kramaric
-	 * @lastmodified Feb 25, 2015 | refactor
-	 * @param indexFile
-	 * @return
-	 * @throws IOException
+	 * @param indexFile file of db indexes
+	 * @return db indexes as map
+	 * @throws IOException exception
 	 */
 	protected Map<String, Vector<Integer>> readPhonemes(File indexFile) throws IOException {
 		StopWatch sw = new StopWatch();
@@ -210,20 +203,46 @@ public abstract class Synthesis {
 	|* Abstract      *|
 	\*****************/
 	
+	/**
+	 * @return audio db file path as string
+	 */
 	public abstract String getAudioDbFilePath();
+	
+	/**
+	 * @return audio db indexes file path as string
+	 */
 	public abstract String getAudioIndexFilePath();
+	
+	/**
+	 * @return audio db file {@link Path}
+	 */
 	public abstract Path getAudioDbFile();
+	
+	/**
+	 * @return audio db indexes file {@link Path}
+	 */
 	public abstract Path getAudioIndexFile();
+	
+	/**
+	 * @param text to be synthesized
+	 * @return voice samples as {@link List} of short's
+	 */
 	public abstract List<Short> convertTextToVoiceSamples(String text);
 	
 	/*****************\
 	|*Getters/Setters*|
 	\*****************/
 	
+	/**
+	 * @return isInitialised
+	 */
 	public boolean isInitialised() {
 		return isInitialised;
 	}
 	
+	/**
+	 * @return decoded samples as short array
+	 */
 	public short[] getDecodedSamples() {
 		return audio.getDecodedSamples();
 	}
