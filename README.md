@@ -13,4 +13,7 @@ Here is list of download possibilities:
 
 or:
 
-[https://oss.sonatype.org/content/groups/public/io/tokra/tts-slovak/](https://oss.sonatype.org/content/groups/public/io/tokra/tts-slovak/)
+[mvnrepository](http://mvnrepository.com/artifact/io.tokra/tts-slovak)
+
+## 1.2 Gradle
+    'io.tokra:tts-slovak:1.0.0'
