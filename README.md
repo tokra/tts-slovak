@@ -1,5 +1,6 @@
 # tts-slovak
 [![Build Status](https://travis-ci.org/to-kra/tts-slovak.svg?branch=master)](https://travis-ci.org/to-kra/tts-slovak)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.tokra/tts-slovak/badge.svg?style=plastic)](http://mvnrepository.com/artifact/io.tokra/tts-slovak)
 Slovak Language Text-to-Speech Synthesis CLI application
 
 # 1. Download
