@@ -118,11 +118,13 @@ public abstract class Synthesis {
 	 * @return voice samples in form of {@link List} of short's
 	 */
 	protected List<Short> getSamplesFromSampedText(Vector<String> sampedText, short[] audiodbSamples, Map<String, Vector<Integer>> audiodbIndexes) {
+
 		List<Short> synthSamples = new ArrayList<Short>();
+		
 		for (int i = 0; i < sampedText.size() - 1; i++) {
 			String key1 = sampedText.elementAt(i);
 			String key2 = sampedText.elementAt(i + 1);
-
+			
 			if (audiodbIndexes.containsKey(key1 + key2)) {
 				Vector<Integer> pom3 = audiodbIndexes.get(key1 + key2); //hodnoty ktore prisluchaju dvojici sampa znakov v hashtable
 				Vector<Integer> pom4 = audiodbIndexes.get(key1);

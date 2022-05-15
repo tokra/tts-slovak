@@ -16,7 +16,7 @@ public class SAMPA {
 					sampa.addElement("a");
 					break;
 				case 'ä':
-					sampa.addElement("{");
+					sampa.addElement("e");
 					break;
 				case 'e':
 					sampa.addElement("E");
@@ -25,7 +25,7 @@ public class SAMPA {
 					if (i < (text.length - 1)) {
 						switch (text[i + 1]) {
 						case 'a':
-							sampa.addElement("I_^A");
+							sampa.addElement("I_^a");
 							i++;
 							zapisal = true;
 							break; // !!!tu je vynimka - a, e, u maju opacnu
@@ -182,6 +182,9 @@ public class SAMPA {
 				case 'f':
 					sampa.addElement("f");
 					break;
+				case 'x':
+					sampa.addElement("x");
+					break;
 				case ' ':
 					sampa.addElement("_");
 					sampa.addElement("_");
@@ -278,7 +281,8 @@ public class SAMPA {
 						} else if (sampa.elementAt(i + 2).equals("v")) {
 							sampa.setElementAt("d", i);
 						} else {
-							sampa.setElementAt("J-", i);
+							// chyba vlady cital vladji
+							sampa.setElementAt("d", i);
 						}
 					}
 
@@ -672,9 +676,8 @@ public class SAMPA {
 								}
 							}
 							/*
-							 * else if (sampa.elementAt(i-2).equals("0")) { //
-							 * nula znamena nejaku medzeru, zatial ju
-							 * nepouzivame if (sampa.elementAt(i+4).equals("d"))
+							 * else if (sampa.elementAt(i-2).equals("0")) { // nula znamena nejaku medzeru,
+							 * zatial ju nepouzivame if (sampa.elementAt(i+4).equals("d"))
 							 * {sampa.setElementAt("z", i);} }
 							 */
 						}
@@ -1326,7 +1329,7 @@ public class SAMPA {
 			} else if (sampa.compareTo("U") == 0) {
 				c = "u";
 			} else if (sampa.compareTo("ä") == 0) {
-				c = "ä";
+				c = "e";
 			} else if (sampa.compareTo("a~") == 0) {
 				c = "á";
 			} else if (sampa.compareTo("E~") == 0) {
