@@ -48,7 +48,7 @@ public final class SynthesisSlovak extends Synthesis {
 			System.out.println("The command line" + " arguments are:");
 			// Iterating the args array
 			// using for each loop
-
+			// using for each loop
 			for (String val : args) {
 				// Printing command line arguments
 				System.out.println(val);
@@ -58,7 +58,8 @@ public final class SynthesisSlovak extends Synthesis {
 					// content = Files.readString(Paths.get(args[0]));
 					// String file = "d:\\JEBCONT\\last\\2022\\dd\\SSS.txt";
 //					String file = "d:\\JEBCONT\\last\\2022\\dd\\SSS_8.txt";
-					String file = "d:\\JEBCONT\\last\\2022\\dd\\chyby.txt";
+//					String file = "d:\\JEBCONT\\last\\2022\\dd\\chyby.txt";
+					String file = ".\\text_tts.txt";
 					// Paths.get(new URI();
 					Paths.get(file).getFileName();
 					// Charset.availableCharsets().keySet().forEach(key -> System.out.println(key));
@@ -79,14 +80,16 @@ public final class SynthesisSlovak extends Synthesis {
 			System.out.println("No command line " + "arguments found.");
 		}
 
+			
 		if (!synthesis.isInitialised()) {
 			logger.warn("Initialisation failed !");
 			return;
 		}
+		
 		InputStream is = synthesis.tts(CONTENT);
 //		InputStream initialStream = FileUtils.openInputStream
 		// (new File("src/main/resources/sample.txt"));
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HHmmss");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss");
 		Date date = new Date();
 
 		File targetFile = new File(".\\targetFile_" + sdf.format(date.getTime()) + ".wav");
