@@ -49,6 +49,7 @@ public final class SynthesisSlovak extends Synthesis {
 			// Iterating the args array
 			// using for each loop
 			// using for each loop istv_l@N621LIS-2 MINGW64 ~/git/tts-slovak (FEATURE_2) -> merge to main
+			//cohfo
 			for (String val : args) {
 				// Printing command line arguments
 				System.out.println(val);
